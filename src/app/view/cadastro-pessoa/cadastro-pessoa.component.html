@@ -1,0 +1,81 @@
+<!-- <div class="container mt-3" [formGroup]="pessoaFormGroup">
+  <h3>Cadastro de pessoa</h3>
+  <hr />
+  <div class="grid p-fluid">
+    <div class="sm:col-6 col-12">
+      <app-input type="text" label="E-mail" controlName="email"></app-input>
+    </div>
+
+    <div class="sm:col-6 col-12">
+      <app-input
+        type="text"
+        label="Nome"
+        controlName="nome"
+        mask="99/99/9999"
+      ></app-input>
+    </div>
+    <div class="sm:col-6 col-12">
+      <app-input type="password" label="Senha" controlName="senha"></app-input>
+    </div>
+
+    <div class="sm:col-6 col-12">
+      <app-input type="number" label="Idade" controlName="idade"></app-input>
+    </div>
+
+    <div class="sm:col-6 col-12">
+      <app-input type="text" label="CPF" controlName="cpf"></app-input>
+    </div>
+
+    <div class="sm:col-12 mt-3">
+      <button
+        (click)="editando ? atualizar() : adicionar()"
+        type="button"
+        class="btn btn-primary"
+        [disabled]="pessoaFormGroup.invalid"
+      >
+        <div
+          *ngIf="buttonLoading"
+          class="spinner-border spinner-border-sm text-dark"
+        ></div>
+        <span *ngIf="!buttonLoading && !editando"> Adicionar </span>
+        <span *ngIf="!buttonLoading && editando"> Atualizar </span>
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-3 mb-3" [formGroup]="opcaoGroup">
+  <h6>Opções</h6>
+  <div class="row g-3">
+    <div class="col-sm-8">
+      <div class="input-group">
+        <input formControlName="valor" type="text" class="form-control" />
+        <button
+          (click)="addOpcao()"
+          class="btn btn-outline-secondary"
+          type="button"
+        >
+        +
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group mt-3 mb-3">
+    <li
+      *ngFor="let opcao of questaoGroup.get('opcoes')?.value; let index = index"
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      {{ index + 1 }} - {{ opcao.valor }}
+      <button
+
+        type="button"
+        class="btn-close"
+      ></button>
+    </li>
+  </ul>
+
+  <!-- <app-button (click)="addQuestao()" [disabled]="questaoGroup.invalid">
+    Adicionar
+  </app-button> -->
+</div>

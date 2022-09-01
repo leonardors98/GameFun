@@ -1,0 +1,45 @@
+<span class="p-float-label mt-3">
+  <input
+    *ngIf="type != 'password' && mask == ''"
+    [class.required]="isRequired()"
+    [id]="label"
+    [formControl]="formControl"
+    [class.is-valid]="formControl.dirty && formControl.valid"
+    [class.is-invalid]="formControl.dirty && formControl.invalid"
+    [type]="type"
+    pInputText
+  />
+
+  <p-inputMask
+    *ngIf="mask != ''"
+    [mask]="mask"
+    inputId="label"
+    [class.required]="isRequired()"
+    [formControl]="formControl"
+    [class.is-valid]="formControl.dirty && formControl.valid"
+    [class.is-invalid]="formControl.dirty && formControl.invalid"
+  ></p-inputMask>
+
+  <p-password *ngIf="type == 'password'">
+    <ng-template pTemplate="footer">
+      <p-divider></p-divider>
+      <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+        <li>Uma letra minuscula</li>
+        <li>Uma letra maiuscula</li>
+        <li>Um numero</li>
+        <li>Minimo 8 caracteres</li>
+      </ul>
+    </ng-template>
+  </p-password>
+
+  <label>
+    {{ label }}
+    <label class="p-error" *ngIf="isRequired()"> *</label>
+  </label>
+</span>
+
+<div class="invalid-feedback">
+  <small class="p-error block" *ngIf="formControl.dirty">
+    {{ getErrorMessage() }}
+  </small>
+</div>
