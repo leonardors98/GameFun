@@ -6,24 +6,38 @@
       <div class="card" [formGroup]="pessoaFormGroup">
         <h3>Cadastro de pessoa</h3>
         <hr />
+        <app-dropdown></app-dropdown>
         <div class="grid p-fluid mt-3">
           <div class="sm:col-6 col-12">
             <app-input
               type="text"
-              label="E-mail"
-              controlName="email"
+              mask="99999-999"
+              label="CEP"
+              controlName="cep"
+            ></app-input>
+          </div>
+
+          <div class="sm:col-6 col-12">
+            <app-input
+              type="text"
+              label="Logradouro"
+              controlName="logradouro"
             ></app-input>
           </div>
           <div class="sm:col-6 col-12">
             <app-input-senha
-              type="password"
-              label="Senha"
-              controlName="senha"
+              type="text"
+              label="numero"
+              controlName="numero"
             ></app-input-senha>
           </div>
 
           <div class="sm:col-6 col-12">
-            <app-input type="text" label="Nome" controlName="nome"></app-input>
+            <app-input
+              type="text"
+              label="Complemento"
+              controlName="complemento"
+            ></app-input>
           </div>
 
           <div class="sm:col-6 col-12">
@@ -34,14 +48,6 @@
             ></app-input>
           </div>
 
-          <div class="sm:col-6 col-12">
-            <app-input
-              type="text"
-              mask="999.999.999-99"
-              label="CPF"
-              controlName="cpf"
-            ></app-input>
-          </div>
           <div class="sm:col-6 col-12">
             <app-input
               type="text"

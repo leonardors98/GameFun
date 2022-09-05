@@ -20,7 +20,7 @@
     [class.is-invalid]="formControl.dirty && formControl.invalid"
   ></p-inputMask>
 
-  <p-password *ngIf="type == 'password'">
+  <p-password *ngIf="type == 'password' && mask == ''">
     <ng-template pTemplate="footer">
       <p-divider></p-divider>
       <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">

@@ -9,7 +9,6 @@ import { ControlContainer, FormControl, Validators } from '@angular/forms';
 export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
 
-
   @Input() mask: string = '';
 
   @Input() label!: string;

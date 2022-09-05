@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { never } from 'rxjs';
 // import { createPrinter } from 'typescript/lib/tsserverlibrary';
 // import { CepService } from '../../../cep.service';
 // import { PessoaService } from '../../../pessoa.service';
@@ -13,11 +11,23 @@ import { never } from 'rxjs';
   styleUrls: ['./cadastro-pessoa.component.css'],
 })
 export class CadastroPessoaComponent implements OnInit {
-  questaoGroup = this.fb.group({
-    titulo: [null, [Validators.required]],
-    tipo: [null, [Validators.required]],
-    requerido: [false],
-    opcoes: [[]]
+
+  pessoaFormGroup = this.fb.group({
+    id: [],
+    email: ['', [Validators.required, Validators.email]],
+    senha: ['', [Validators.required]],
+    nome: ['', [Validators.required]],
+    sobrenome: ['', [Validators.required]],
+    cpf: ['',[Validators.required,],],
+    telefone: [[], [Validators.required]],
+
+
+    // cep: ['', [Validators.required]],
+    // logradouro: ['', [Validators.required]],
+    // numero: [null],
+    // bairro: ['', [Validators.required]],
+    // cidade: ['', [Validators.required]],
+    // estado: ['', [Validators.required]],
   });
 
   opcaoGroup = this.fb.group({
@@ -35,15 +45,9 @@ export class CadastroPessoaComponent implements OnInit {
 
   addOpcao() {
     // this.questaoGroup.get('opcoes')?.value?.push(this.opcaoGroup.value);
-    let opcao = this.questaoGroup.get('opcoes')?.value
-    if(Array.isArray(opcao)){
-      opcao?.push(this.opcaoGroup.value)
-
-      console.log(Array.isArray(this.opcaoGroup.value))
-      console.log(opcao)
-      console.log(this.opcaoGroup.value)
-      console.log(this.questaoGroup.get('opcoes')?.value)
-    }
+    // if(Array.isArray(opcao)){
+      // opcao?.push(this.opcaoGroup.value)
+    // }
     this.opcaoGroup.reset();
   }
   addQuestao() {
