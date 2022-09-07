@@ -1,0 +1,16 @@
+<span class="p-float-label mt-3">
+  <p-inputMask
+    *ngIf="mask != ''"
+    [mask]="mask"
+    inputId="label"
+    [class.required]="required"
+    [formControl]="formControl"
+    [class.is-valid]="formControl.dirty && formControl.valid"
+    [class.is-invalid]="formControl.dirty && formControl.invalid"
+  ></p-inputMask>
+  <label>
+    {{ label }}
+    <label class="p-error" *ngIf="required"> *</label>
+    <!-- <label class="p-error" *ngIf="isRequired()"> *</label> -->
+  </label>
+</span>

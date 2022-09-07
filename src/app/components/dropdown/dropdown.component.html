@@ -1,5 +1,9 @@
 <p-dropdown
-  [options]="cities"
-  optionLabel="name"
+  [options]="results"
+  [filter]="true"
+  filterBy="results"
+  [showClear]="true"
   [formControl]="formControl"
-></p-dropdown>
+  [placeholder]="placeholder"
+>
+</p-dropdown>

@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-endereco',
   templateUrl: './cadastro-endereco.component.html',
-  styleUrls: ['./cadastro-endereco.component.css']
+  styleUrls: ['./cadastro-endereco.component.css'],
 })
 export class CadastroEnderecoComponent implements OnInit {
-
+  mostrar() {
+    console.log(this.pessoaFormGroup.value);
+  }
+  // [Validators.required]
   pessoaFormGroup = this.fb.group({
-    id: [],
-    cep: ['', [Validators.required]],
-    logradouro: ['', [Validators.required]],
-    numero: [null],
+    id: [''],
+    cep: [''],
+    // logradouro: [''],
+    // numero: [null],
     complemento: [null],
-    bairro: ['', [Validators.required]],
-    estado: ['', [Validators.required]],
-    cidade: ['', [Validators.required]],
-  });
-
-  opcaoGroup = this.fb.group({
-    valor: ['', [Validators.required]],
+    // bairro: [''],
+    estado: [''],
+    cidade: [''],
   });
 
   constructor(
@@ -29,23 +28,5 @@ export class CadastroEnderecoComponent implements OnInit {
     public fb: FormBuilder
   ) {}
 
-  ngOnInit() {
-  }
-
-  addOpcao() {
-    // this.questaoGroup.get('opcoes')?.value?.push(this.opcaoGroup.value);
-    // if(Array.isArray(opcao)){
-      // opcao?.push(this.opcaoGroup.value)
-    // }
-    this.opcaoGroup.reset();
-  }
-  addQuestao() {
-
-  }
-  adicionar() {
-
-  }
-  atualizar() {
-
-  }
+  ngOnInit() {}
 }

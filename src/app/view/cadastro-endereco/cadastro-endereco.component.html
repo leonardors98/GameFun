@@ -1,6 +1,39 @@
 <div
   class="surface-0 flex align-items-center justify-content-center min-h-95 min-w-95 overflow-hidden"
 >
+  <button (click)="mostrar()">mostrar</button>
+  <div class="grid justify-content-center p-2 lg:p-0" style="min-width: 80%">
+    <div class="col-12">
+      <div class="card" [formGroup]="pessoaFormGroup">
+        <h3>Cadastro de pessoa</h3>
+        <hr />
+        <!-- <app-dropdown tipo="estado" controlName="cidade"></app-dropdown> -->
+        <app-dropdown
+          *ngIf="'pessoaFormGroup.get(estado.value)'"
+          tipo="estado"
+          controlName="estado"
+          placeholder="sla"
+        ></app-dropdown
+        >aa{{ pessoaFormGroup.get("estado?.value?") }}aa
+        <div class="grid p-fluid mt-3">
+          <div class="sm:col-6 col-12">
+            <app-input
+              type="text"
+              mask="99999-999"
+              label="CEP"
+              controlName="cep"
+            ></app-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+  class="surface-0 flex align-items-center justify-content-center min-h-95 min-w-95 overflow-hidden"
+>
+  <button (click)="mostrar()">mostrar</button>
   <div class="grid justify-content-center p-2 lg:p-0" style="min-width: 80%">
     <div class="col-12">
       <div class="card" [formGroup]="pessoaFormGroup">
@@ -25,11 +58,11 @@
             ></app-input>
           </div>
           <div class="sm:col-6 col-12">
-            <app-input-senha
+            <app-input-password
               type="text"
               label="numero"
               controlName="numero"
-            ></app-input-senha>
+            ></app-input-password>
           </div>
 
           <div class="sm:col-6 col-12">
@@ -61,3 +94,4 @@
     </div>
   </div>
 </div>
+</div> -->

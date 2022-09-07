@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { InputSenhaComponent } from './input-senha.component';
+import { InputPasswordComponent } from './input-password.component';
 
-describe('InputSenhaComponent', () => {
-  let component: InputSenhaComponent;
-  let fixture: ComponentFixture<InputSenhaComponent>;
+describe('InputPasswordComponent', () => {
+  let component: InputPasswordComponent;
+  let fixture: ComponentFixture<InputPasswordComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputSenhaComponent ]
+      declarations: [ InputPasswordComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputSenhaComponent);
+    fixture = TestBed.createComponent(InputPasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

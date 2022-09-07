@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ControlContainer, FormControl } from '@angular/forms';
+import { ControlContainer, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
+  selector: 'app-input-mask',
+  templateUrl: './input-mask.component.html',
+  styleUrls: ['./input-mask.component.css'],
 })
-export class InputComponent implements OnInit {
+export class InputMaskComponent implements OnInit {
   @Input() placeholder: string = '';
 
   @Input() mask: string = '';
@@ -28,9 +29,9 @@ export class InputComponent implements OnInit {
     );
   }
 
-  // isRequired() {
-  //   return this.formControl.hasValidator(Validators.required);
-  // }
+  isRequired() {
+    return this.formControl.hasValidator(Validators.required);
+  }
 
   getErrorMessage() {
     if (this.formControl.errors) {

@@ -16,7 +16,8 @@ import { MessagesModule } from 'primeng/messages';
 import { PasswordModule } from 'primeng/password';
 import { AppComponent } from './app.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { InputSenhaComponent } from './components/input-senha/input-senha.component';
+import { InputMaskComponent } from './components/input-mask/input-mask.component';
+import { InputPasswordComponent } from './components/input-password/input-password.component';
 import { InputComponent } from './components/input/input.component';
 import { CadastroEnderecoComponent } from './view/cadastro-endereco/cadastro-endereco.component';
 import { CadastroPessoaComponent } from './view/cadastro-pessoa/cadastro-pessoa.component';
@@ -48,8 +49,9 @@ import { LoginComponent } from './view/login/login.component';
     CadastroPessoaComponent,
     InputComponent,
     CadastroEnderecoComponent,
-    InputSenhaComponent,
     DropdownComponent,
+    InputMaskComponent,
+    InputPasswordComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
